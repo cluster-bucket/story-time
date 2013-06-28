@@ -1,0 +1,7 @@
+      <div class="row-fluid" ng-repeat="story in getStories()" >
+        <div class="span12">
+          <h2>{{story.storyTitle}}</h2>
+          <p>As a/an <em>{{story.narrativeRole}}</em>, I want to {{story.narrativeFeature}} so that I can {{story.narrativeBenefit}}.</p>
+          <span class="badge badge-info">{{story.scrumDifficulty}}</span> <span class="label">{{story.scrumSprint}}</span> <span class="label">{{story.scrumAssignee}}</span>
+        </div>
+      </div>
