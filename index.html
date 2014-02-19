@@ -1,41 +1,49 @@
 <!DOCTYPE html>
-<html ng-app="storyTime">
+<html lang="en" ng-app="storyTime">
   <head>
-    <title>Story time</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <title>Story time</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <style>
-      body {padding: 50px;} 
-      .navbar .brand {margin-left: 0;}
-      .ui-preview {top: 90px; bottom: 10px;}
+      body {
+        padding-top: 70px;
+        padding-bottom: 30px;
+      }
+      .ui-preview {
+        top: 90px;
+        bottom: 20px;
+        overflow-y: scroll;
+      }
     </style>
+
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <a class="brand" href="#/">Story Time</a>
-          <ul class="nav">
-            <li class="dropdown">
-              <a href="#/story" class="dropdown-toggle" data-toggle="dropdown">
-                Stories <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#/story/list">View</a></li>
-                <li><a href="#/story/new">Add</a></li>
-              </ul>
-            </li>
-          </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#/">Story Time</a>
         </div>
+        <!--
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#/story/list">View</a></li>
+          <li><a href="#/story/new">New</a></li>
+        </ul>
+        -->
       </div>
+    </div>
+
+    <div class="container-fluid">
       <div ng-view></div>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="src/libs/ui-bootstrap-tpls-0.4.0.min.js"></script>
-    <script src="src/libs/localStorageModule.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

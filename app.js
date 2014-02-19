@@ -1,18 +1,19 @@
 // http://dannorth.net/whats-in-a-story/
 // http://en.wikipedia.org/wiki/Scrum_(software_development)
 (function () {
-  var storyTimeModule;
+  var app;
 
-  storyTimeModule = angular.module('storyTime', ['LocalStorageModule', 'ui.bootstrap']);
+  app = angular.module('storyTime', ['ngRoute', 'LocalStorageModule','ui.bootstrap']);
 
-  storyTimeModule.config(function ($routeProvider) {
+  app.config(function ($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'index_view.html'
+      controller: StoryCtrl,
+      templateUrl: 'story_form.html'
     }).when('/story', {
-      controller: StoryCtrl, 
+      controller: StoryCtrl,
       templateUrl: 'story_view.html'
     }).when('/story/list', {
-      controller: StoryCtrl, 
+      controller: StoryCtrl,
       templateUrl: 'story_view.html'
     }).when('/story/new', {
       controller: StoryCtrl,
@@ -22,12 +23,12 @@
     });
   });
 
-  storyTimeModule.factory('scenariosService', function() {
+  app.factory('scenariosService', function() {
     var scenarios, scenariosService;
-    
+
     scenarios = [];
     scenariosService = {};
-      
+
     scenariosService.resetScenarios = function() {
       scenarios = [];
     };
@@ -39,13 +40,13 @@
     scenariosService.getScenarios = function() {
       return scenarios;
     };
-     
+
     return scenariosService;
   });
 
-  storyTimeModule.factory('storiesService', function(localStorageService) {
+  app.factory('storiesService', function(localStorageService) {
     var stories, storiesService;
-    
+
     stories = [];
     storiesService = {};
 
@@ -57,7 +58,7 @@
     storiesService.getStories = function() {
       return stories;
     };
-     
+
     return storiesService;
   });
 

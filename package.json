@@ -1,0 +1,19 @@
+{
+  "name": "story-time",
+  "version": "0.1.0",
+  "description": "BDD-style Agile/Scrum story generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dustinboston/story-time.git"
+  },
+  "author": "Dustin Boston",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/dustinboston/story-time/issues"
+  },
+  "homepage": "https://github.com/dustinboston/story-time"
+}
