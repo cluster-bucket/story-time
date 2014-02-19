@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dustinboston/story-time/issues"
   },
-  "homepage": "https://github.com/dustinboston/story-time"
+  "homepage": "https://github.com/dustinboston/story-time",
+  "devDependencies": {
+    "bower": "~1.2.8"
+  }
 }
