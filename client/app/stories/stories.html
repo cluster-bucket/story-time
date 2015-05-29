@@ -1,0 +1,71 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <form role="form">
+        <fieldset>
+          <legend>Story</legend>
+          <div class="form-group">
+            <label class="control-label" for="story-title">Title</label>
+            <span class="help-inline" 
+              popover="The title should describe an activity that someone wants to do, e.g. Account Holder withdraws cash." 
+              popover-title="Title"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newStory.title" id="story-title" class="form-control" type="text" placeholder="e.g. Account Holder withdraws cash" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Narrative</legend>
+          <div class="form-group">
+            <label class="control-label" for="narrative-role">As a/an</label>
+            <span class="help-inline" 
+              popover="The person who cares about the feature being delivered, and also who to talk to about it e.g. Account Holder." 
+              popover-title="Role"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newStory.role" id="narrative-role" class="form-control" type="text" placeholder="e.g. Account Holder"/>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="narrative-feature">I want to</label>
+            <span class="help-inline" 
+              popover="A feature that will deliver the benefit attributed to it, e.g. Withdraw cash from an ATM." 
+              popover-title="Feature"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newStory.feature" id="narrative-feature" 
+              class="form-control" type="text" placeholder="e.g. Withdraw cash from an ATM" />
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="narrative-benefit">So that I can</label>
+            <span class="help-inline" 
+              popover="Why does the Role want this feature, e.g. Get money when the bank is closed." 
+              popover-title="Benefit"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newStory.benefit" id="narrative-benefit" 
+              class="form-control" type="text" placeholder="e.g. Get money when the bank is closed" />
+          </div>
+        </fieldset>
+        <button ng-click="addStory()" class="btn btn-primary" type="submit">Create</button>
+      </form>
+    </div>
+    <div class="col-lg-8">
+      <div class="panel panel-default" ng-repeat="story in stories">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            <a href="/story/{{story._id}}">{{story.title}}</a>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <p>As a/an <em>{{story.role}}</em>, I want to {{story.feature}} so that I can {{story.benefit}}.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

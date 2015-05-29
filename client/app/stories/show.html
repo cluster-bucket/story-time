@@ -1,0 +1,22 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <form role="form"></form>
+    </div>
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">{{story.title}}</h2>
+        </div>
+        <div class="panel-body">
+          <p>As a/an <em>{{story.role}}</em>, I want to {{story.feature}} so that I can {{story.benefit}}.</p>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteStory(story)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

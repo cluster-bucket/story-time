@@ -1,0 +1,74 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <form role="form" data-spy="affix" data-offset-top="60" class="affix" style="width: 350px">
+        <fieldset>
+          <legend>Scenario</legend>
+          <div class="form-group">
+            <label>Title</label>
+            <span class="help-inline" 
+              popover="The scenario title should say what’s different, e.g. Account has sufficient funds." 
+              popover-title="Title"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newScenario.title" class="form-control" type="text" 
+              placeholder="e.g. Account has sufficient funds" />
+          </div>
+          <div class="form-group">
+            <label>Given</label>
+            <span class="help-inline" 
+              popover="The givens should define all of, and no more than, the required context, e.g. The account balance is $100." 
+              popover-title="Given"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newScenario.given" class="form-control" type="text" 
+              placeholder="e.g. The account balance is $100" />
+          </div>
+          <div class="form-group">
+            <label>When</label>
+            <span class="help-inline" 
+              popover="The event should describe the feature and should be very simple e.g. The Account Holder requests $20." 
+              popover-title="Event"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newScenario.event" class="form-control" type="text" 
+              placeholder="e.g. The Account Holder requests $20" />
+          </div>
+          <div class="form-group">
+            <label>Then</label>
+            <span class="help-inline" 
+              popover="The outcome of the event given a specific context e.g. The ATM should dispense $20." 
+              popover-title="Outcome"
+              popover-placement="right"
+              popover-trigger="mouseenter">
+            <i class="fa fa-question-circle"></i></span>
+            <input ng-model="newScenario.outcome" class="form-control" type="text" 
+              placeholder="e.g. The ATM should dispense $20" />
+          </div>
+        </fieldset>
+        <button ng-click="addScenario()" class="btn btn-primary" type="submit">Create</button>
+      </form>
+    </div>
+    <div class="col-lg-8">
+      <h2>{{story.title}}</h2>
+      <p class="lead">As a/an <em>{{story.role}}</em>, I want to {{story.feature}} so that I can {{story.benefit}}.</p>
+      <button type="button" class="btn btn-danger btn-xs" ng-click="deleteStory(story)">Delete</button>
+      <div class="panel panel-default" ng-repeat="scenario in story.scenarios">
+        <div class="panel-heading">
+          <h2 class="panel-title">{{scenario.title}}</h2>
+        </div>
+        <div class="panel-body">
+          <p>Given {{scenario.given}}, when {{scenario.event}}, then {{scenario.outcome}}.</p>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger btn-xs" ng-click="deleteScenario(scenario.$$hashKey)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

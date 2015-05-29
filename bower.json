@@ -1,27 +1,23 @@
 {
   "name": "story-time",
-  "version": "0.1.0",
-  "homepage": "https://github.com/dustinboston/story-time",
-  "authors": [
-    "Dustin Boston <dustin@dblogit.com>"
-  ],
-  "description": "BDD-style Agile/Scrum story generator",
-  "main": "index.html",
-  "license": "GPLv3",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "version": "0.0.0",
   "dependencies": {
-    "angular-latest": "~1.2.13",
-    "angular-bootstrap": "~0.10.0",
+    "angular": ">=1.2.*",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.0.1",
+    "jquery": "~1.11.0",
     "bootstrap": "~3.1.1",
-    "font-awesome": "~4.0.3",
-    "jquery": "~2.1.0",
-    "angular-local-storage": "~0.0.1"
+    "angular-resource": ">=1.2.*",
+    "angular-cookies": ">=1.2.*",
+    "angular-sanitize": ">=1.2.*",
+    "angular-bootstrap": "~0.11.0",
+    "font-awesome": ">=4.1.0",
+    "lodash": "~2.4.1",
+    "angular-socket-io": "~0.6.0",
+    "angular-ui-router": "~0.2.10"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.*",
+    "angular-scenario": ">=1.2.*"
   }
 }
