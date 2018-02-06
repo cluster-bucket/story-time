@@ -2,7 +2,7 @@
         <form class="col-md-4" role="form">
           <div class="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <p><strong>Ohai!</strong> The story below has been pre-populated, 
+            <p><strong>Ohai!</strong> The story below has been pre-populated,
               but it hasn't been saved. So make sure to scroll down and hit save
               or there won't be anything fun to look at.</p>
           </div>
@@ -10,8 +10,8 @@
             <legend>Story</legend>
             <div class="form-group">
               <label class="control-label" for="story-title">Title</label>
-              <span class="help-inline" 
-                popover="The title should describe an activity that someone wants to do, e.g. Account Holder withdraws cash." 
+              <span class="help-inline"
+                popover="The title should describe an activity that someone wants to do, e.g. Account Holder withdraws cash."
                 popover-title="Title"
                 popover-placement="right"
                 popover-trigger="mouseenter">
@@ -23,8 +23,8 @@
             <legend>Narrative</legend>
             <div class="form-group">
               <label class="control-label" for="narrative-role">As a/an</label>
-              <span class="help-inline" 
-                popover="The person who cares about the feature being delivered, and also who to talk to about it e.g. Account Holder." 
+              <span class="help-inline"
+                popover="The person who cares about the feature being delivered, and also who to talk to about it e.g. Account Holder."
                 popover-title="Role"
                 popover-placement="right"
                 popover-trigger="mouseenter">
@@ -33,24 +33,24 @@
             </div>
             <div class="form-group">
               <label class="control-label" for="narrative-feature">I want to</label>
-              <span class="help-inline" 
-                popover="A feature that will deliver the benefit attributed to it, e.g. Withdraw cash from an ATM." 
+              <span class="help-inline"
+                popover="A feature that will deliver the benefit attributed to it, e.g. Withdraw cash from an ATM."
                 popover-title="Feature"
                 popover-placement="right"
                 popover-trigger="mouseenter">
               <i class="fa fa-question-circle"></i></span>
-              <input ng-model="narrativeFeature" id="narrative-feature" 
+              <input ng-model="narrativeFeature" id="narrative-feature"
                 class="form-control" type="text" placeholder="e.g. Withdraw cash from an ATM" />
             </div>
             <div class="form-group">
               <label class="control-label" for="narrative-benefit">So that I can</label>
-              <span class="help-inline" 
-                popover="Why does the Role want this feature, e.g. Get money when the bank is closed." 
+              <span class="help-inline"
+                popover="Why does the Role want this feature, e.g. Get money when the bank is closed."
                 popover-title="Benefit"
                 popover-placement="right"
                 popover-trigger="mouseenter">
               <i class="fa fa-question-circle"></i></span>
-              <input ng-model="narrativeBenefit" id="narrative-benefit" 
+              <input ng-model="narrativeBenefit" id="narrative-benefit"
                 class="form-control" type="text" placeholder="e.g. Get money when the bank is closed" />
             </div>
           </fieldset>
@@ -60,46 +60,46 @@
                 <legend>Scenario</legend>
                 <div class="form-group">
                   <label>Title</label>
-                  <span class="help-inline" 
-                    popover="The scenario title should say what’s different, e.g. Account has sufficient funds." 
+                  <span class="help-inline"
+                    popover="The scenario title should say what’s different, e.g. Account has sufficient funds."
                     popover-title="Title"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenario.scenarioTitle" class="form-control" type="text" 
+                  <input ng-model="scenario.scenarioTitle" class="form-control" type="text"
                     placeholder="e.g. Account has sufficient funds" />
                 </div>
                 <div class="form-group">
                   <label>Given</label>
-                  <span class="help-inline" 
-                    popover="The givens should define all of, and no more than, the required context, e.g. The account balance is $100." 
+                  <span class="help-inline"
+                    popover="The givens should define all of, and no more than, the required context, e.g. The account balance is $100."
                     popover-title="Given"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenario.scenarioGiven" class="form-control" type="text" 
+                  <input ng-model="scenario.scenarioGiven" class="form-control" type="text"
                     placeholder="e.g. The account balance is $100" />
                 </div>
                 <div class="form-group">
                   <label>When</label>
-                  <span class="help-inline" 
-                    popover="The event should describe the feature and should be very simple e.g. The Account Holder requests $20." 
+                  <span class="help-inline"
+                    popover="The event should describe the feature and should be very simple e.g. The Account Holder requests $20."
                     popover-title="Event"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenario.scenarioEvent" class="form-control" type="text" 
+                  <input ng-model="scenario.scenarioEvent" class="form-control" type="text"
                     placeholder="e.g. The Account Holder requests $20" />
                 </div>
                 <div class="form-group">
                   <label>Then</label>
-                  <span class="help-inline" 
-                    popover="The outcome of the event given a specific context e.g. The ATM should dispense $20." 
+                  <span class="help-inline"
+                    popover="The outcome of the event given a specific context e.g. The ATM should dispense $20."
                     popover-title="Outcome"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenario.scenarioOutcome" class="form-control" type="text" 
+                  <input ng-model="scenario.scenarioOutcome" class="form-control" type="text"
                     placeholder="e.g. The ATM should dispense $20" />
                 </div>
               </fieldset>
@@ -108,45 +108,45 @@
               <legend>Scenario</legend>
               <div class="form-group">
                   <label>Title</label>
-                  <span class="help-inline" 
-                    popover="The scenario title should say what’s different, e.g. Account has sufficient funds." 
+                  <span class="help-inline"
+                    popover="The scenario title should say what’s different, e.g. Account has sufficient funds."
                     popover-title="Title"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenarioTitle" class="form-control" type="text" 
+                  <input ng-model="scenarioTitle" class="form-control" type="text"
                     placeholder="e.g. Account has sufficient funds" />
                 </div>
                 <div class="form-group">
                   <label>Given</label>
-                  <span class="help-inline" 
-                    popover="The givens should define all of, and no more than, the required context, e.g. The account balance is $100." 
+                  <span class="help-inline"
+                    popover="The givens should define all of, and no more than, the required context, e.g. The account balance is $100."
                     popover-title="Given"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenarioGiven" class="form-control" type="text" 
+                  <input ng-model="scenarioGiven" class="form-control" type="text"
                     placeholder="e.g. The account balance is $100" />
                 </div>
                 <div class="form-group">
                   <label>When</label>
-                  <span class="help-inline" 
-                    popover="The event should describe the feature and should be very simple e.g. The Account Holder requests $20." 
+                  <span class="help-inline"
+                    popover="The event should describe the feature and should be very simple e.g. The Account Holder requests $20."
                     popover-title="Event"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenarioEvent" class="form-control" type="text" 
+                  <input ng-model="scenarioEvent" class="form-control" type="text"
                     placeholder="e.g. The Account Holder requests $20" />
                 </div>
                 <div class="form-group">
                   <label>Then</label>
-                  <span class="help-inline" popover="The outcome of the event given a specific context e.g. The ATM should dispense $20." 
+                  <span class="help-inline" popover="The outcome of the event given a specific context e.g. The ATM should dispense $20."
                     popover-title="Outcome"
                     popover-placement="right"
                     popover-trigger="mouseenter">
                   <i class="fa fa-question-circle"></i></span>
-                  <input ng-model="scenarioOutcome" class="form-control" type="text" 
+                  <input ng-model="scenarioOutcome" class="form-control" type="text"
                     placeholder="e.g. The ATM should dispense $20" />
                 </div>
               <button ng-click="addScenario()" class="btn btn-default" type="button"><i class="fa fa-plus"></i> Add Scenario</button>
@@ -156,13 +156,13 @@
             <legend>Scrum</legend>
             <div class="form-group">
               <label class="control-label" for="scrum-difficulty">Effort</label>
-              <span class="help-inline" 
+              <span class="help-inline"
                 popover="The difficulty of the story, without using actual hours. The most common scale used is a rounded Fibonacci sequence",
                 popover-title="Difficulty"
                 popover-placement="right"
                 popover-trigger="mouseenter">
               <i class="fa fa-question-circle"></i></span>
-              <select ng-model="scrumDifficulty" id="scrum-difficulty" 
+              <select ng-model="scrumDifficulty" id="scrum-difficulty"
                 class="form-control" type="text" >
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -174,24 +174,24 @@
             </div>
             <div class="form-group">
               <label class="control-label" for="scrum-sprint">Sprint</label>
-              <span class="help-inline" 
+              <span class="help-inline"
                 popover="Add text here",
                 popover-title="Sprint"
                 popover-placement="right"
                 popover-trigger="mouseenter">
               <i class="fa fa-question-circle"></i></span>
-              <input ng-model="scrumSprint" id="scrum-sprint" class="form-control" type="text" 
+              <input ng-model="scrumSprint" id="scrum-sprint" class="form-control" type="text"
                  placeholder="e.g. Sprint 1" />
             </div>
             <div class="form-group">
               <label class="control-label" for="scrum-assignee">Assignee</label>
-              <span class="help-inline" 
+              <span class="help-inline"
                 popover="Add text here",
                 popover-title="Assignee"
                 popover-placement="right"
                 popover-trigger="mouseenter">
               <i class="fa fa-question-circle"></i></span>
-              <input ng-model="scrumAssignee" id="scrum-assignee" class="form-control" type="text" 
+              <input ng-model="scrumAssignee" id="scrum-assignee" class="form-control" type="text"
                  placeholder="e.g. Bob Smith" />
             </div>
           </fieldset>
@@ -210,6 +210,21 @@
             <p>Given {{scenario.scenarioGiven}}, when {{scenario.scenarioEvent}}, then {{scenario.scenarioOutcome}}.</p>
           </div>
           <hr />
+          <h2>Markdown View</h2>
+          <pre>
+{{storyTitle}}
+
+As a/an {{narrativeRole}}
+I want to {{narrativeFeature}}
+So that I can {{narrativeBenefit}}
+<div ng-repeat="scenario in getScenarios()">
+## {{scenario.scenarioTitle}}
+
+Given {{scenario.scenarioGiven}}
+When {{scenario.scenarioEvent}}
+Then {{scenario.scenarioOutcome}}
+</div>
+        </pre>
           <h2>JIRA View</h2>
           <pre>
 h1. {{storyTitle}}
