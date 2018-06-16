@@ -1,0 +1,53 @@
+<form *ngIf="story">
+  <fieldset>
+    <legend>Details</legend>
+    <div>
+      <label for="story-title">Title</label><br />
+      <input [(ngModel)]="story.title" name="story-title" type="text" placeholder="e.g. Account Holder withdraws cash" /><br />
+      <span class="help-inline">The title should describe an activity that someone wants to do, e.g. Account Holder withdraws cash.</span>
+    </div>
+
+    <div>
+      <label for="narrative-role">As a/an</label><br />
+      <input [(ngModel)]="story.role" name="narrative-role" type="text" placeholder="e.g. Account Holder" /><br />
+      <span class="help-inline">The person who cares about the feature being delivered, and also who to talk to about it e.g. Account Holder."</span>
+    </div>
+
+    <div>
+      <label for="narrative-feature">I want to</label><br />
+      <input [(ngModel)]="story.feature" name="narrative-feature" type="text" placeholder="e.g. Withdraw cash from an ATM" /><br />
+      <span class="help-inline">A feature that will deliver the benefit attributed to it, e.g. Withdraw cash from an ATM.</span>
+    </div>
+
+    <div>
+      <label for="narrative-benefit">So that I can</label><br />
+      <input [(ngModel)]="story.benefit" name="narrative-benefit" type="text" placeholder="e.g. Get money when the bank is closed" /><br />
+      <span class="help-inline">Why does the Role want this feature, e.g. Get money when the bank is closed.</span>
+    </div>
+  </fieldset>
+
+  <fieldset *ngFor="let scenario of story.scenarios; index as i">
+    <legend>Scenario</legend>
+    {{ i }}
+    <div class="form-group">
+      <label for="scenario-title{{i}}">Title</label><br />
+      <input [(ngModel)]="scenario.title" name="scenario-title{{i}}" type="text" placeholder="e.g. Account has sufficient funds" /><br />
+      <span class="help-inline">The scenario title should say what’s different, e.g. Account has sufficient funds.</span>
+    </div>
+    <div class="form-group">
+      <label for="scenario-given{{i}}">Given</label><br />
+      <input [(ngModel)]="scenario.given" name="scenario-given{{i}}" type="text" placeholder="e.g. The account balance is $100" /><br />
+      <span class="help-inline">The givens should define all of, and no more than, the required context, e.g. The account balance is $100.</span>
+    </div>
+    <div class="form-group">
+      <label for="scenario-event{{i}}">When</label><br />
+      <input [(ngModel)]="scenario.event" name="scenario-event{{i}}" type="text" placeholder="e.g. The Account Holder requests $20" />
+      <span class="help-inline">The event should describe the feature and should be very simple e.g. The Account Holder requests $20.</span><br />
+    </div>
+    <div class="form-group">
+      <label for="scenario-outcome{{i}}">Then</label><br />
+      <input [(ngModel)]="scenario.outcome" name="scenario-outcome{{i}}" type="text" placeholder="e.g. The ATM should dispense $20" />
+      <span class="help-inline">The outcome of the event given a specific context e.g. The ATM should dispense $20.</span><br />
+    </div>
+  </fieldset>
+</form>

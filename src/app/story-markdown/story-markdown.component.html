@@ -1,0 +1,15 @@
+<pre *ngIf="story">
+{{ story.title }}
+
+As a/an {{ story.role }}
+I want to {{ story.feature }}
+So that I can {{ story.benefit }}
+
+<div *ngFor="let scenario of story.scenarios">
+## {{scenario.title}}
+
+Given {{ scenario.given }}
+When {{ scenario.event }}
+Then {{ scenario.outcome }}
+</div>
+</pre>
