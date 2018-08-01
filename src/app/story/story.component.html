@@ -1,0 +1,29 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ story.title }}
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options"
+      (click)="toggle()">
+      <span class="icon">
+        <i class="fas" aria-hidden="true"
+          [class.fa-angle-down]="!expanded"
+          [class.fa-angle-up]="expanded"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content" [class.is-hidden]="!expanded">
+    <div class="content">
+      <p>
+        As a/an {{ story.role }}<br />
+        I want to {{ story.feature }}<br />
+        So that I can {{ story.benefit }}
+      </p>
+    </div>
+  </div>
+  <footer class="card-footer" [class.is-hidden]="!expanded">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>

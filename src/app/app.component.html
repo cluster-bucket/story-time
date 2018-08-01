@@ -1,2 +1,30 @@
-<h1>{{ title }}</h1>
-<app-stories></app-stories>
+<nav id="navbar" class="navbar has-shadow is-spaced">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        Cool Story Bro
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start"></div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="#" class="button is-primary"
+            (click)="toggleNewStoryModal(modal)">New Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <app-stories [stories]="sortedStories()"></app-stories>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-story-form #modal></app-story-form>

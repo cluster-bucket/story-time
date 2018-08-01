@@ -1,0 +1,126 @@
+<div class="modal is-active" #modal>
+  <div class="modal-background"></div>
+  <form class="modal-card" [formGroup]="newStoryForm"
+    (ngSubmit)="onSubmit(newStoryForm.value, modal)">
+      <header class="modal-card-head">
+        <p class="modal-card-title">New Story</p>
+        <button class="delete" aria-label="close"
+          (click)="toggleNewStoryModal(modal)"></button>
+      </header>
+      <section class="modal-card-body">
+        <fieldset class="content">
+          <div class="field">
+            <label class="label" for="story-title">Title
+              <span class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="The title should describe an activity that someone wants to do, e.g. Account Holder withdraws cash.">
+                <i class="far fa-question-circle has-text-grey-light"></i>
+              </span>
+            </label>
+            <div class="control has-icons-right">
+              <input class="input" name="story-title" id="story-title" type="text"
+                placeholder="e.g. Account Holder withdraws cash"
+                [formControl]="newStoryForm.controls['title']"
+                [class.is-danger]="!newStoryForm.controls['title'].valid"
+                [class.is-success]="newStoryForm.controls['title'].valid" />
+              <span *ngIf="!newStoryForm.controls['title'].valid" class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+              <span *ngIf="newStoryForm.controls['title'].valid" class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-danger" *ngIf="!newStoryForm.controls['title'].valid">
+              <span *ngIf="newStoryForm.controls['title'].hasError('required')">
+                This field is required. </span>
+              <span *ngIf="newStoryForm.controls['title'].hasError('invalidProperCase')">
+                Use proper case. </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="story-role">As a/an
+              <span class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="The person who cares about the feature being delivered, and who to talk to about it e.g. Account Holder.">
+                <i class="far fa-question-circle has-text-grey-light"></i>
+              </span>
+            </label>
+            <div class="control has-icons-right">
+              <input class="input" name="story-role" id="story-role"
+                type="text" placeholder="e.g. Account Holder"
+                [formControl]="newStoryForm.controls['role']"
+                [class.is-danger]="!newStoryForm.controls['role'].valid"
+                [class.is-success]="newStoryForm.controls['role'].valid" />
+              <span *ngIf="!newStoryForm.controls['role'].valid" class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+              <span *ngIf="newStoryForm.controls['role'].valid" class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-danger" *ngIf="!newStoryForm.controls['role'].valid">
+              <span *ngIf="newStoryForm.controls['role'].hasError('required')">
+                This field is required. </span>
+              <span *ngIf="newStoryForm.controls['role'].hasError('invalidRoleName')">
+                Terms like User, Consumer, and End-User are too abstract. </span>
+              <span *ngIf="newStoryForm.controls['role'].hasError('invalidProperCase')">
+                Use proper case. </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="story-feature">I want to
+              <span class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="A feature that will deliver the benefit attributed to it, e.g. Withdraw cash from an ATM.">
+                <i class="far fa-question-circle has-text-grey-light"></i>
+              </span>
+            </label>
+            <div class="control has-icons-right">
+              <input class="input" name="story-feature" id="story-feature"
+                type="text" placeholder="e.g. Withdraw cash from an ATM"
+                [formControl]="newStoryForm.controls['feature']"
+                [class.is-danger]="!newStoryForm.controls['feature'].valid"
+                [class.is-success]="newStoryForm.controls['feature'].valid" />
+              <span *ngIf="!newStoryForm.controls['feature'].valid" class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+              <span *ngIf="newStoryForm.controls['feature'].valid" class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-danger" *ngIf="!newStoryForm.controls['feature'].valid">
+              This field is required.
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="story-benefit">So that I can
+              <span class="tooltip is-tooltip-multiline is-tooltip-right" data-tooltip="Why does the Role want this feature, e.g. Get money when the bank is closed.">
+                <i class="far fa-question-circle has-text-grey-light"></i>
+              </span>
+            </label>
+            <div class="control has-icons-right">
+              <input class="input" name="story-benefit" id="story-benefit"
+                type="text" placeholder="e.g. Get money when the bank is closed"
+                [formControl]="newStoryForm.controls['benefit']"
+                [class.is-danger]="!newStoryForm.controls['benefit'].valid"
+                [class.is-success]="newStoryForm.controls['benefit'].valid" />
+              <span *ngIf="!newStoryForm.controls['benefit'].valid" class="icon is-small is-right">
+                <i class="fas fa-exclamation-triangle"></i>
+              </span>
+              <span *ngIf="newStoryForm.controls['benefit'].valid" class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <p class="help is-danger" *ngIf="!newStoryForm.controls['benefit'].valid">
+              This field is required.
+            </p>
+          </div>
+        </fieldset>
+      </section>
+      <footer class="modal-card-foot">
+        <div class="field is-grouped">
+          <div class="control">
+            <button *ngIf="!newStoryForm.valid" type="submit" class="button is-primary" disabled>Submit</button>
+            <button *ngIf="newStoryForm.valid" type="submit" class="button is-primary">Submit</button>
+          </div>
+        </div>
+      </footer>
+  </form>
+</div>

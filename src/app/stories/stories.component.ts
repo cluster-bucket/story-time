@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
 
 import { Story } from '../story';
-import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-stories',
@@ -10,23 +13,11 @@ import { StoryService } from '../story.service';
 })
 export class StoriesComponent implements OnInit {
 
-  stories: Story[];
-
-  selectedStory:  Story;
-
-  constructor(private storyService: StoryService) { }
-
-  ngOnInit() {
-    this.getStories();
-  }
-
-  getStories(): void {
-    this.storyService.getStories()
-      .subscribe(stories => this.stories = stories);
-  }
+  @Input() stories: Story[];
 
   onSelect(story: Story) {
-    this.selectedStory = story;
   }
 
+  constructor() {}
+  ngOnInit() {} 
 }
