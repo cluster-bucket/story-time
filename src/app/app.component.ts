@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ReflectiveInjector
+} from '@angular/core';
 
 import { Story } from './story';
-import { STORIES } from './mock_stories';
+import { StoryService } from './story.service';
 
 @Component({
   selector: 'app-root',
@@ -12,30 +15,27 @@ import { STORIES } from './mock_stories';
 export class AppComponent {
 
   title = 'Cool Story Bro';
-  stories: Story[] = STORIES;
 
-  constructor() { } 
+  isNewStoryModalActive: boolean = false;
+
+  constructor(private storyService: StoryService) {
+  } 
 
   ngOnInit() { }
 
-  sortedStories(): Story[] {
-    return this.stories.sort((a: Story, b: Story) => {
-      if (!a || !b) return 0;
-      const aTitle = a.title.toUpperCase();
-      const bTitle = b.title.toUpperCase();
-      if (aTitle < bTitle) return -1;
-      if (aTitle > bTitle) return 1;
-      return 0;
-    });
-  }
-
-  toggleNewStoryModal(modal: HTMLDivElement): boolean {
+  showNewStoryModal(): boolean {
+    this.isNewStoryModalActive = true;
     return false;
   }
 
-  // TODO: Subscript to app-story-form
-  addStory(story: Story) {
-    this.stories.push(story);
+  hideNewStoryModal(): boolean {
+    this.isNewStoryModalActive = false;
+    return false;
+  }
+
+  addNewStory(story: Story) {
+    this.storyService.addStory(story);
+    this.hideNewStoryModal();
   }
 
 }

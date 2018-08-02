@@ -10,7 +10,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <a href="#" class="button is-primary"
-            (click)="toggleNewStoryModal(modal)">New Story</a>
+            (click)="showNewStoryModal()">New Story</a>
         </div>
       </div>
     </div>
@@ -21,10 +21,14 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        <app-stories [stories]="sortedStories()"></app-stories>
+        <app-stories></app-stories>
       </div>
     </div>
   </div>
 </section>
 
-<app-story-form #modal></app-story-form>
+<app-story-form 
+  (onStoryCreated)="addNewStory($event)"
+  (onClose)="hideNewStoryModal()"
+  [active]="isNewStoryModalActive">
+</app-story-form>

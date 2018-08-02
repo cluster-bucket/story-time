@@ -1,10 +1,12 @@
 import {
   Component,
   OnInit,
-  Input
+  Input,
+  ReflectiveInjector
 } from '@angular/core';
 
 import { Story } from '../story';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-stories',
@@ -13,11 +15,13 @@ import { Story } from '../story';
 })
 export class StoriesComponent implements OnInit {
 
-  @Input() stories: Story[];
+  stories: Story[] = [];
 
-  onSelect(story: Story) {
+  onSelect(story: Story) {}
+
+  constructor(private storyService: StoryService) {
+    this.stories = this.storyService.getSortedStories();
   }
 
-  constructor() {}
   ngOnInit() {} 
 }

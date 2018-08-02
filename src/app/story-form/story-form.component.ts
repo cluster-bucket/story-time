@@ -24,8 +24,9 @@ import { roleNameValidator } from '../validators/role_name';
 })
 export class StoryFormComponent implements OnInit {
 
-  @Input() active: boolean = false;
+  @Input() active: boolean;
 
+  @Output() onClose: EventEmitter<boolean>;
   @Output() onStoryCreated: EventEmitter<Story>;
 
   newStoryForm: FormGroup;
@@ -33,6 +34,7 @@ export class StoryFormComponent implements OnInit {
   // TODO: Show/Hide
   constructor(fb: FormBuilder) {
     this.onStoryCreated = new EventEmitter();
+    this.onClose = new EventEmitter();
 
     this.newStoryForm = fb.group({
       title: ['', Validators.compose([Validators.required, properCaseValidator])],
@@ -58,8 +60,9 @@ export class StoryFormComponent implements OnInit {
      */
   }
 
-  toggleNewStoryModal(modal: HTMLDivElement): boolean {
-    modal.classList.toggle('is-active');
+  close(): boolean {
+    console.log('closed');
+    this.onClose.emit(true);
     return false;
   }
 

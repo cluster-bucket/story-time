@@ -1,11 +1,11 @@
-<div class="modal is-active" #modal>
+<div class="modal" (class.is-active)="active" #modal>
   <div class="modal-background"></div>
   <form class="modal-card" [formGroup]="newStoryForm"
     (ngSubmit)="onSubmit(newStoryForm.value, modal)">
       <header class="modal-card-head">
         <p class="modal-card-title">New Story</p>
         <button class="delete" aria-label="close"
-          (click)="toggleNewStoryModal(modal)"></button>
+          (click)="close()"></button>
       </header>
       <section class="modal-card-body">
         <fieldset class="content">
