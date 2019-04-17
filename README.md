@@ -5,7 +5,7 @@ Story Time
 
 ## Usage
 
-Go to http://dustinboston.github.io/story-time/ and get typing! Make sure to
+Go to https://js-dot-js.github.io/story-time/ and get typing! Make sure to
 check out the tooltips and pre-populated values---they have lots of helpful
 tips to get you going.
 
